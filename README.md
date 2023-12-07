@@ -1,6 +1,6 @@
 # Docker Compose pour PHPMyAdmin et MySQL
 
-Ce projet configure un environnement avec PHPMyAdmin et MySQL en utilisant Docker Compose.
+Ce projet configure un environnement dockerisé avec PHPMyAdmin et MySQL en utilisant Docker Compose.
 
 ## Prérequis
 
@@ -42,3 +42,10 @@ Ouvrez votre navigateur et allez à [http://localhost:8080](http://localhost:808
 
 - **Changez le mot de passe root** dans le fichier `docker-compose.yml` pour sécuriser votre base de données.
 - Ne partagez pas votre fichier `docker-compose.yml` contenant des mots de passe ou des clés.
+
+## Références
+
+Pour plus d'informations, veuillez consulter les ressources suivantes :
+
+- [Docker Volumes Documentation](https://docs.docker.com/storage/volumes/)
+- [Configurer Docker et Docker Compose sur AWS EC2 (Amazon Linux 2023 AMI)](https://medium.com/@fredmanre/how-to-configure-docker-docker-compose-in-aws-ec2-amazon-linux-2023-ami-ab4d10b2bcdc)
