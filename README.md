@@ -1,55 +1,50 @@
-# Docker Compose pour PHPMyAdmin et MySQL
+# Docker Compose for PHPMyAdmin and MySQL
 
-Ce projet configure un environnement dockerisé avec PHPMyAdmin et MySQL en utilisant Docker Compose.
+This project sets up a dockerized environment with PHPMyAdmin and MySQL using Docker Compose.
 
-## Prérequis
+## Prerequisites
 
-- Docker installé sur votre machine.
-- Docker Compose installé sur votre machine.
+- Docker installed on your machine.
+- Docker Compose installed on your machine.
 
-## Installation et démarrage
+## Installation and Startup
 
-1. **Cloner le dépôt** (si vous avez mis le fichier `docker-compose.yml` dans un dépôt git) ou simplement **placer le fichier `docker-compose.yml` dans un dossier** sur votre machine.
-
-2. **Naviguer dans le dossier** contenant le fichier `docker-compose.yml`.
-
-3. **Démarrer les services** avec la commande suivante :
+1. **Clone the repository** (if you have placed the `docker-compose.yml` file in a git repository) or simply **place the `docker-compose.yml` file in a folder** on your machine.
+2. **Navigate to the folder** containing the `docker-compose.yml` file.
+3. **Start the services** with the following command:
    `docker-compose up -d`
+   This command will download the necessary images and start the containers in the background.
 
-Cette commande va télécharger les images nécessaires et démarrer les conteneurs en arrière-plan.
+## Accessing PHPMyAdmin
 
-## Accéder à PHPMyAdmin
+Open your browser and go to [http://localhost:8080](http://localhost:8080). Use the following credentials to log in:
+- **User**: `root`
+- **Password**: `example` (replace it with the password you have set in the `docker-compose.yml` file).
 
-Ouvrez votre navigateur et allez à [http://localhost:8080](http://localhost:8080). Utilisez les identifiants suivants pour vous connecter :
+## File Structure
 
-- **Utilisateur** : `root`
-- **Mot de passe** : `exemple` (remplacez-le par le mot de passe que vous avez défini dans le fichier `docker-compose.yml`).
+- `db`: Service for the MySQL server.
+- `phpmyadmin`: Service for the PHPMyAdmin web interface.
+- `volumes`: A volume named `dbdata` is created for MySQL data persistence.
 
-## Structure du fichier
+## Best Practices
 
-- `db` : Service pour le serveur MySQL.
-- `phpmyadmin` : Service pour l'interface web PHPMyAdmin.
-- `volumes` : Un volume nommé `dbdata` est créé pour la persistance des données MySQL.
+- Use of volumes for data persistence.
+- Configuration via environment variables.
+- Separation of services into distinct containers.
+- Automatic restart of services.
 
-## Bonnes pratiques
+## Security
 
-- Utilisation de volumes pour la persistance des données.
-- Configuration via des variables d'environnement.
-- Séparation des services en conteneurs distincts.
-- Redémarrage automatique des services.
+- **Change the root password** in the `docker-compose.yml` file to secure your database.
+- Do not share your `docker-compose.yml` file containing passwords or keys.
 
-## Sécurité
+## License
 
-- **Changez le mot de passe root** dans le fichier `docker-compose.yml` pour sécuriser votre base de données.
-- Ne partagez pas votre fichier `docker-compose.yml` contenant des mots de passe ou des clés.
+This project is private.
 
-## Licence
+## References
 
-Ce projet est privé.
-
-## Références
-
-Pour plus d'informations, veuillez consulter les ressources suivantes :
-
+For more information, please consult the following resources:
 - [Docker Volumes Documentation](https://docs.docker.com/storage/volumes/)
-- [Configurer Docker et Docker Compose sur AWS EC2 (Amazon Linux 2023 AMI)](https://medium.com/@fredmanre/how-to-configure-docker-docker-compose-in-aws-ec2-amazon-linux-2023-ami-ab4d10b2bcdc)
+- [Configuring Docker and Docker Compose on AWS EC2 (Amazon Linux 2023 AMI)](https://medium.com/@fredmanre/how-to-configure-docker-docker-compose-in-aws-ec2-amazon-linux-2023-ami-ab4d10b2bcdc)
