@@ -39,10 +39,6 @@ Open your browser and go to [http://localhost:8080](http://localhost:8080). Use 
 - **Change the root password** in the `docker-compose.yml` file to secure your database.
 - Do not share your `docker-compose.yml` file containing passwords or keys.
 
-## License
-
-This project is private.
-
 ## References
 
 For more information, please consult the following resources:
